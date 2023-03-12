@@ -5,15 +5,15 @@ import (
 	"time"
 )
 
-type storage struct {
-	db *sql.DB
-}
+// type storage struct {
+// 	db *sql.DB
+// }
 
-func NewStorage(db *sql.DB) *storage {
-	return &storage{
-		db: db,
-	}
-}
+// func NewStorage(db *sql.DB) *storage {
+// 	return &storage{
+// 		db: db,
+// 	}
+// }
 
 // func (s *storage) open(userInput User) error {
 // 	db, err := sql.Open("sqlite3", "store.db")
@@ -29,13 +29,33 @@ func NewStorage(db *sql.DB) *storage {
 // 	return nil
 // }
 
-func (s *storage) Exec(userInput User) error {
+func Exec(userInput User) error {
 	id := GenerateId()
 
-	if _, err := s.db.Exec("insert into users (id, Name, Number, Time) values ($1, $2, $3, $4)", id, userInput.Name, userInput.Number, time.Now()); err != nil {
+	db := openDb()
+
+	statement, err := db.Prepare("CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, number TEXT, Time time.Time)")
+	if err != nil {
 		//
 	}
+	statement.Exec()
+
+	if _, err := db.Prepare("INSERT INTO users (id, Name, Number, Time) VALUES (?, ?, ?, ?)"); err != nil {
+		//
+	}
+	statement.Exec(id, userInput.Name, userInput.Number, time.Now())
 	return nil
+}
+
+func openDb() *sql.DB {
+	db, err := sql.Open("sqlite3", "store.db")
+	if err != nil {
+		//
+	}
+
+	defer db.Close()
+
+	return db
 }
 
 func GenerateId() int {
