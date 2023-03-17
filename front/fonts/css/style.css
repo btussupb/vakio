@@ -1,0 +1,742 @@
+.dot {
+    display: flex;
+    justify-content: center;
+}
+
+.svg {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.svg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    height: 100vh;
+    width: 100px;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in;
+    color: #fff;
+}
+
+.header:hover {
+    width: 200px;
+}
+
+.header__contacts {
+    display: grid;
+    grid-gap: 25px;
+    transition: all 0.3s ease-in;
+}
+
+.header__contacts a {
+    transition: all 0.3s ease-in;
+}
+
+.header:hover .header__contacts {
+    transform: rotate(-90deg);
+}
+
+.header:hover .header__contact {
+    transform: rotate(90deg);
+    display: inline-block;
+    width: fit-content;
+}
+
+.header:hover .header__link p {
+    display: block;
+    opacity: 1;
+}
+
+.header__link p {
+    display: none;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+}
+
+.header__link {
+    margin-top: 20px;
+}
+
+.header__link:nth-child(2),
+.header__link:first-child {
+    margin-top: 0;
+}
+
+.header__link a {
+    display: flex;
+    align-items: center;
+}
+
+.header__link p {
+    white-space: nowrap;
+}
+
+.header:hover .phonenum {
+    max-width: 150px;
+    opacity: 1;
+}
+
+.phonenum {
+    max-width: 0;
+    flex-shrink: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.2s ease-in-out;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.header__link {
+    position: relative;
+    width: fit-content;
+}
+
+.header__link:hover a {
+    color: #3688FF;
+}
+
+.header__link:hover svg path,
+.header__contact svg path {
+    transition: all 0.2s ease-in;
+}
+
+.header__link:hover svg path {
+    fill: #ffffff;
+}
+
+.header__contact:hover svg path {
+    fill: #3688FF;
+}
+
+.top {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.top a {
+    margin-right: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* banner */
+
+.banner {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.banner__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+    width: 100%;
+}
+
+.banner__text h1 {
+    font-weight: 700;
+    font-size: 50px;
+    color: #37393F;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.banner__text h1 span {
+    color: #3688FF;
+}
+
+.banner__text p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 146.19%;
+    /* color: #B9B9B9; */
+    color: #585959;
+    ;
+}
+
+.banner__text {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.banner__img {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.banner__item.img {
+    width: 1000px;
+    position: absolute;
+    /* right: 100%; */
+    top: 50%;
+    transform: translate(-15%, -30%);
+}
+
+.banner__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bannerbtn {
+    cursor: pointer;
+    width: 294px;
+    height: 50px;
+    background: #FFFFFF;
+    color: #37393F;
+    box-shadow: 0px 7px 41px -3px rgba(174, 192, 202, 0.38);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-top: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding-left: 87px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.bannerbtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: #3688FF;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.bannerbtn:hover::before {
+    width: 100%;
+}
+
+.bannerbtn:hover {
+    color: #FFFFFF;
+}
+
+.bannerbtn svg {
+    margin-left: auto;
+    background: #3688FF;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    padding: 17px 13px;
+}
+
+.banner__item.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* popup */
+
+.overlay.active,
+.popup.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.popup {
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    width: 456px;
+    height: auto;
+    background: #FFFFFF;
+    z-index: 110;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.popup svg {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.popup svg path {
+    transition: all 0.3s ease-in-out;
+}
+
+.popup svg:hover path {
+    fill: #3688FF;
+}
+
+.popup__title {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3688FF;
+    margin-bottom: 30px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.form__group label {
+    color: #666968;
+}
+
+.form__group input {
+    width: 100%;
+    height: 60px;
+    background: #F3F3F3;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    outline: #3688FF;
+}
+
+.popup button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background: #3688FF;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    color: #FFFFFF;
+    border: 1px solid #3688FF;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background: none;
+    color: #3688FF;
+}
+
+
+/* products */
+
+.produts {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tabcontent.active {
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tab-head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: auto;
+    height: 50px;
+    padding-bottom: 20px;
+}
+
+.tablink {
+    padding: 5px;
+    white-space: nowrap;
+    padding-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+    color: #666968;
+    transition: all 0.3s ease-in;
+    position: relative;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.tablink:first-child {
+    padding-left: 0;
+}
+
+.tablink:last-child {
+    padding-right: 0;
+}
+
+.tablink::before {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #666968;
+    transition: all 0.3s ease-in;
+}
+
+.tablink.active::before,
+.tablink:hover::before {
+    background: #3688FF;
+}
+
+.tablink.active,
+.tablink:hover {
+    color: #3688FF;
+}
+
+.tab-main {
+    margin-top: 50px;
+}
+
+.tabcontent-left {
+    width: 45%;
+}
+
+.product__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 36px;
+    color: #3688FF;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 16px;
+    color: #666968;
+    margin-bottom: 30px;
+}
+
+.tabcontent__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+
+.tabcontent__info-item {
+    position: relative;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.tabcontent__info-item::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    width: 10px;
+    height: 10px;
+    background-image: url("../img/dot.svg");
+    background-size: contain;
+    border-radius: 50%;
+}
+
+
+/* slider */
+
+.slider {
+    width: 45%;
+    height: 500px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.slick_arrow {
+    position: absolute;
+    top: 30%;
+    border: none;
+    background: #3688FF;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    z-index: 50;
+}
+
+.slick_arrow:hover {
+    padding: 10px 20px;
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next {
+    right: 0;
+    transform: rotate(180deg);
+}
+
+
+/*  */
+
+.fixed__phone {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    /* background: rgba(0, 0, 0, 0.7); */
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 rgba(44, 60, 204, 0.5);
+    animation: pulseWhatsapp 2s infinite;
+    cursor: pointer;
+}
+
+.fixed__btn svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes pulseWhatsapp {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(51, 66, 195, 0.4);
+        box-shadow: 0 0 0 0 rgba(40, 92, 142, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 15px rgba(27, 215, 65, 0);
+        box-shadow: 0 0 0 15px rgb(27 215 65 / 0%);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(27, 215, 65, 0);
+        box-shadow: 0 0 0 0 rgb(27 215 65 / 0%);
+    }
+}
+
+.fixed__phone p {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    /* right: 0; */
+    left: 120%;
+    transform: translate(0, -50%);
+    color: #FFFFFF;
+    transition: all 0.3s ease-in;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+}
+
+.fixed__phone:hover p {
+    padding: 3px 5px;
+    width: 240px;
+}
+
+.fixed__phone:hover .fixed__phone-items {
+    height: 180px;
+    opacity: 1;
+}
+
+.fixed__phone-items {
+    position: absolute;
+    bottom: 110%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.fixed__phone-items a {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background: #666968;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in;
+}
+
+.fixed__phone-items a:hover {
+    background: #a9c7f4;
+}
+
+.fixed__phone-items a svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.knowmore {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+    position: relative;
+    width: fit-content;
+    padding-left: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+}
+
+.knowmore::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease-in;
+    z-index: -1;
+}
+
+.knowmore:hover {
+    color: #FFFFFF;
+}
+
+.knowmore svg .knowmoresvg {
+    transition: all 0.3s ease-in;
+}
+
+.knowmore:hover svg .knowmoresvg {
+    fill: none;
+}
+
+.knowmore:hover::before {
+    width: 100%;
+}
+
+.knowmore svg {
+    margin-left: 5px;
+}
+
+.produt__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.produt__item.left {
+    flex-direction: row-reverse;
+}
+
+.product__img,
+.produt-left {
+    width: 48%;
+}
+
+.product__img {
+    height: 500px;
+}
+
+
+/*  */
+
+.banner2 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.banner2__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.banner2__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.banner2__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner2__item {
+    width: 35%;
+    margin: 0 auto;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+}
