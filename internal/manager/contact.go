@@ -7,6 +7,6 @@ type (
 	}
 
 	Service interface {
-		Exec(user User) error
+		PostUser(user User) error
 	}
 )

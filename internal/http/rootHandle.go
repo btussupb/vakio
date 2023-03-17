@@ -1,11 +1,11 @@
-package handlers
+package http
 
 import (
 	"encoding/json"
 	"html/template"
 	"net/http"
 
-	mngSrv "github.com/btussupb/vakio/manager"
+	mngSrv "github.com/btussupb/vakio/internal/manager"
 )
 
 type handler struct {
@@ -29,7 +29,7 @@ func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
-	if err := h.mngSrv.Exec(userInput); err != nil {
+	if err := h.mngSrv.PostUser(userInput); err != nil {
 		//
 	}
 
