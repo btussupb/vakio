@@ -2,6 +2,7 @@ package http
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"net/http"
 
@@ -27,7 +28,7 @@ func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
 			//
 		}
 	case http.MethodPost:
-
+		fmt.Println("test")
 		h.methodPost(w, r)
 	}
 }
@@ -40,8 +41,8 @@ func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
 	if err := h.mngSrv.PostUser(userInput); err != nil {
-		//
+		w.Write([]byte("ошибка на сервере"))
+	} else {
+		w.Write([]byte("мы вам напишем"))
 	}
-
-	w.Write([]byte("мы вам напишем"))
 }

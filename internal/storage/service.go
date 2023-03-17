@@ -42,6 +42,9 @@ func (s *storage) PostUser(userInput User) error {
 	// 	//
 	// }
 	fmt.Println(userInput.Name, userInput.Number, time.Now())
+
+	s.init()
+
 	if _, err := s.db.Exec("INSERT INTO users (Name, Number, CreatedTime) VALUES ($1, $2, $3)", userInput.Name, userInput.Number, time.Now()); err != nil {
 		//
 	}
@@ -81,7 +84,7 @@ func (s *storage) getUser() (*User, error) {
 	return user, nil
 }
 
-func (s *storage) Init() error {
+func (s *storage) init() error {
 	q := ("CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, number TEXT, Time time.Time)")
 
 	_, err := s.db.Exec(q)
