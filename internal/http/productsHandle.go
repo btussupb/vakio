@@ -1,7 +1,17 @@
 package http
 
-import "net/http"
+import (
+	"html/template"
+	"net/http"
+)
 
 func (h *handler) ProductsHandle(w http.ResponseWriter, r *http.Request) {
-	temp.ExecuteTemplate(w, "template.html", nil)
+	temp, err := template.ParseFiles("front/product.html")
+	if err != nil {
+		//
+	}
+	err = temp.ExecuteTemplate(w, "product", nil)
+	if err != nil {
+		//
+	}
 }

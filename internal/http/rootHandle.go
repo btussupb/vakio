@@ -17,6 +17,7 @@ var temp *template.Template
 func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
+
 		temp, err := template.ParseFiles("front/index.html")
 		if err != nil {
 			//
@@ -26,6 +27,7 @@ func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
 			//
 		}
 	case http.MethodPost:
+
 		h.methodPost(w, r)
 	}
 }

@@ -9,8 +9,11 @@ func NewHandler() handler {
 
 func (h *handler) Router() http.Handler {
 	mux := http.NewServeMux()
+	mux.Handle("/front/", http.StripPrefix("/front/", http.FileServer(http.Dir("./front/"))))
+	// mux.Handle("/front/img/", http.StripPrefix("/front/img/", http.FileServer(http.Dir("./front/img/"))))
+
 	mux.HandleFunc("/", h.RootHandle)
 	mux.HandleFunc("/products", h.ProductsHandle)
-	mux.Handle("/front/fonts/css/", http.StripPrefix("/front/fonts/css/", http.FileServer(http.Dir("./front/fonts/css"))))
+
 	return mux
 }
