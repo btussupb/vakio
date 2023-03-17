@@ -15,9 +15,17 @@ type handler struct {
 var temp *template.Template
 
 func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodGet {
-		temp.ExecuteTemplate(w, "template.html", nil)
-	} else if r.Method == http.MethodPost {
+	switch r.Method {
+	case http.MethodGet:
+		temp, err := template.ParseFiles("front/index.html")
+		if err != nil {
+			//
+		}
+		err = temp.ExecuteTemplate(w, "index", nil)
+		if err != nil {
+			//
+		}
+	case http.MethodPost:
 		h.methodPost(w, r)
 	}
 }

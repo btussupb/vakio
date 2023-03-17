@@ -80,3 +80,13 @@ func (s *storage) getUser() (*User, error) {
 	}
 	return user, nil
 }
+
+func (s *storage) Init() error {
+	q := ("CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, number TEXT, Time time.Time)")
+
+	_, err := s.db.Exec(q)
+	if err != nil {
+		//
+	}
+	return nil
+}
