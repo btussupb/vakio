@@ -11,6 +11,6 @@ func (h *handler) Router() http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", h.RootHandle)
 	mux.HandleFunc("/products", h.ProductsHandle)
-	mux.Handle("/front/fonts/css/", http.StripPrefix("/front/fonts/css/", http.FileServer(http.Dir("./front/fonts/css"))))
+	mux.Handle("/front/css/", http.StripPrefix("/front/css/", http.FileServer(http.Dir("./front/css"))))
 	return mux
 }
