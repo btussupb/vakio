@@ -300,7 +300,7 @@
         <form action="/" method="POST">
             <div class="form__group">
                 <label for="">Выберите город</label>
-                <select class="form-control">
+                <select class="form-control" name="sity">
                     <option value="Астана">Астана</option>
                     <option value="Алматы">Алматы</option>
                     <option value="Караганда">Караганда</option>
@@ -309,11 +309,11 @@
             </div>
             <div class="form__group">
                 <label for="">Ваше имя</label>
-                <input type="text" required="">
+                <input type="text" required="" name="name">
             </div>
             <div class="form__group">
                 <label for="">Ваш номер телефона</label>
-                <input type="tel" id="phone-mask" required="">
+                <input type="tel" id="phone-mask" required="" name="number">
             </div>
             <button type="submit">Оставить заявку</button>
         </form>
