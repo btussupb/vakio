@@ -1,6 +1,10 @@
 package manager
 
-import wayToDb "github.com/btussupb/vakio/internal/storage"
+import (
+	"fmt"
+
+	wayToDb "github.com/btussupb/vakio/internal/storage"
+)
 
 type service struct {
 	wayToDb wayToDb.Storage
@@ -11,5 +15,6 @@ type service struct {
 // }
 
 func (s *service) PostUser(userInput User) error {
+	fmt.Println("manager")
 	return s.wayToDb.PostUser(userInput.toStorageModel())
 }

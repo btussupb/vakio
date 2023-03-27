@@ -4,7 +4,7 @@ import "time"
 
 type (
 	User struct {
-		Sity        string
+		City        string
 		Name        string
 		Number      string
 		CreatedTime time.Time

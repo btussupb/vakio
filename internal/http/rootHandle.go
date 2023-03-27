@@ -12,6 +12,12 @@ type handler struct {
 	mngSrv mngSrv.Service
 }
 
+// func NewHandler(mngSrv mngSrv.Service) *handler {
+// 	return &handler{
+// 		mngSrv: mngSrv,
+// 	}
+// }
+
 var temp *template.Template
 
 func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
@@ -32,19 +38,28 @@ func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
-	// var userInput mngSrv.User
-	r.ParseForm()
-	fmt.Println(r.PostForm)
-	fmt.Println(r)
+	var userInput mngSrv.User
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+	// fmt.Fprintf(w, "Post from website! r.PostFrom = %v\n", r.PostForm)
+	userInput.Name = r.FormValue("name")
+	userInput.Number = r.FormValue("number")
+	userInput.City = r.FormValue(("sity"))
+
+	// fmt.Println(r.PostForm)
 
 	// if err := json.NewDecoder(r.Body).Decode(&userInput); err != nil {
-	// 	fmt.Println("Decode r.Body:%s", err)
+	// 	fmt.Println("Decode r.Body:", err)
 	// }
+	fmt.Println(userInput)
 	// defer r.Body.Close()
 
-	// if err := h.mngSrv.PostUser(userInput); err != nil {
-	// 	w.Write([]byte("ошибка на сервере"))
-	// } else {
-	// 	w.Write([]byte("мы вам напишем"))
-	// }
+	fmt.Println(h)
+	if err := h.mngSrv.PostUser(userInput); err != nil {
+		// w.Write([]byte("ошибка на сервере"))
+	} else {
+		// w.Write([]byte("мы вам напишем"))
+	}
 }

@@ -1,10 +1,15 @@
 package http
 
-import "net/http"
+import (
+	"net/http"
 
-func NewHandler() handler {
-	var h handler
-	return h
+	mngSrv "github.com/btussupb/vakio/internal/manager"
+)
+
+func NewHandler() *handler {
+	return &handler{
+		mngSrv: mngSrv.Service,
+	}
 }
 
 func (h *handler) Router() http.Handler {
