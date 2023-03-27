@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/front/css/slick.min.css">
-    <link rel="stylesheet" href="/front/css/style.css">
-    <link rel="stylesheet" href="/front/css/main.css">
+    <link rel="stylesheet" href="../front/css/style.css">
+    <link rel="stylesheet" href="../front/css/slick.min.css">
+    <link rel="stylesheet" href="../front/css/main.css">
 </head>
 
 <body>
     <div class="top">
-        <a href="/" class="logo"><img src="img/Vakio_Darkblue.jpg" alt=""></a>
+        <a href="/" class="logo"><img src="../front/img/Vakio_Darkblue.jpg" alt=""></a>
     </div>
     <header class="header">
         <ul class="header__links">
@@ -134,147 +134,186 @@
                     </a>
                 </div>
                 <div class="banner2__img">
-                    <img src="img/interior_kiv.png" alt="">
+                    <img src="../front/img/interior_kiv.png" alt="">
                 </div>
             </div>
         </div>
     </section>
-    <!-- <section class="banner">
+
+    <section class="advantages paddings">
         <div class="container">
-            <div class="banner__container">
-                <div class="banner__text banner__item">
-                    <h1>Умная <span>вентиляция</span> для вашего дома и офиса</h1>
-                    <p>Превратите свой дом или офис в комфортное и здоровое место с помощью умной вентиляции. Наша продукция обеспечивает оптимальную вентиляцию помещения, учитывая все параметры воздуха, чтобы обеспечить комфортное дыхание и сохранить здоровье
-                        ваших близких и коллег.</p>
-                    <a href="#/" class="popupOpen bannerbtn">
-                        Заказать
-                        <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23.25 7.06625C23.25 7.18625 23.2237 7.30625 23.1769 7.42062C23.1319 7.53125 23.0644 7.63062 22.9819 7.715C22.98 7.71875 22.9781 7.7225 22.9763 7.72625L17.3513 13.3512C16.9856 13.7169 16.3912 13.7169 16.0256 13.3512C15.66 12.9856 15.66 12.3912 16.0256 12.0256L20.0494 8H1.6875C1.17 8 0.75 7.58 0.75 7.0625C0.75 6.545 1.17 6.125 1.6875 6.125H20.0494L16.0256 2.10125C15.66 1.73562 15.66 1.14125 16.0256 0.775623C16.3912 0.409998 16.9856 0.409998 17.3513 0.775623L22.9763 6.40062C22.9781 6.4025 22.98 6.40812 22.9819 6.41C23.0644 6.49437 23.1319 6.59375 23.1769 6.70437C23.2256 6.81875 23.25 6.94062 23.25 7.0625C23.25 7.06437 23.25 7.06437 23.25 7.06625Z" fill="white"></path>
-                        </svg>                    
-                    </a>
+            <h2 class="titleSection center js-title way">Наша плюсы</h2>
+            <div class="advantages__items way ">
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <svg fill="#000000" width="800px" height="800px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15.48 12c-.13.004-.255.058-.347.152l-2.638 2.63-1.625-1.62c-.455-.474-1.19.258-.715.712l1.983 1.978c.197.197.517.197.715 0l2.995-2.987c.33-.32.087-.865-.367-.865zM.5 16h3c.277 0 .5.223.5.5s-.223.5-.5.5h-3c-.277 0-.5-.223-.5-.5s.223-.5.5-.5zm0-4h3c.277 0 .5.223.5.5s-.223.5-.5.5h-3c-.277 0-.5-.223-.5-.5s.223-.5.5-.5zm0-4h3c.277 0 .5.223.5.5s-.223.5-.5.5h-3C.223 9 0 8.777 0 8.5S.223 8 .5 8zm24 11c-1.375 0-2.5 1.125-2.5 2.5s1.125 2.5 2.5 2.5 2.5-1.125 2.5-2.5-1.125-2.5-2.5-2.5zm0 1c.834 0 1.5.666 1.5 1.5s-.666 1.5-1.5 1.5-1.5-.666-1.5-1.5.666-1.5 1.5-1.5zm-13-1C10.125 19 9 20.125 9 21.5s1.125 2.5 2.5 2.5 2.5-1.125 2.5-2.5-1.125-2.5-2.5-2.5zm0 1c.834 0 1.5.666 1.5 1.5s-.666 1.5-1.5 1.5-1.5-.666-1.5-1.5.666-1.5 1.5-1.5zm-5-14C5.678 6 5 6.678 5 7.5v11c0 .822.678 1.5 1.5 1.5h2c.676.01.676-1.01 0-1h-2c-.286 0-.5-.214-.5-.5v-11c0-.286.214-.5.5-.5h13c.286 0 .5.214.5.5V19h-5.5c-.66 0-.648 1.01 0 1h7c.66 0 .654-1 0-1H21v-9h4.227L29 15.896V18.5c0 .286-.214.5-.5.5h-1c-.654 0-.654 1 0 1h1c.822 0 1.5-.678 1.5-1.5v-2.75c0-.095-.027-.19-.078-.27l-4-6.25c-.092-.143-.25-.23-.422-.23H21V7.5c0-.822-.678-1.5-1.5-1.5z"/></svg>
+                    </div>
+                    <div class="advantages__title">Представитель завода</div>
+                    <p>Цены завода-производителя</p>
+                    <p>Наличие товара на складе</p>
                 </div>
-                <div class="banner__item img"><img src="img/baseSmart/Base.36.png" alt=""></div>
-                <div class="banner__img banner__item">
-                    <img src="https://www.freepnglogos.com/uploads/cloud-png/white-big-cloud-png-27.png" alt="">
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <svg fill="#000000" width="800px" height="800px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M27.99 6.437c-.58-.58-1.54-.58-2.12 0l-.433.432c-.58.58-.58 1.54 0 2.12l1.573 1.574c.582.58 1.54.58 2.122 0l.432-.433c.58-.58.58-1.538 0-2.12L27.99 6.437zm-.706.707l1.573 1.573c.202.202.202.505 0 .707l-.433.433c-.2.202-.505.202-.707 0l-1.573-1.573c-.202-.202-.202-.505 0-.707l.433-.433c.202-.202.505-.202.707 0zm-3.41 1.86c-.3-.024-.666.06-.938.334l-10.29 10.308c-.187.19-.385.386-.503.692-.117.306-.142.64-.142 1.162V23c0 .505.43 1 1 1h1.5c.524 0 .865-.03 1.17-.148.306-.12.503-.317.684-.498l10.29-10.31c.495-.496.45-1.256 0-1.706l-2-2c-.212-.21-.47-.31-.77-.334zm.062 1.04l2 2c.038.038.076.218 0 .294l-10.29 10.308c-.18.18-.233.233-.337.274-.105.04-.332.08-.81.08H13v-1.5c0-.48.038-.705.077-.805.038-.1.09-.153.277-.34l10.29-10.31c.09-.09.247-.045.292 0zM4.5 11h13c.277 0 .5.223.5.5s-.223.5-.5.5h-13c-.277 0-.5-.223-.5-.5s.223-.5.5-.5zm0-3h13c.277 0 .5.223.5.5s-.223.5-.5.5h-13c-.277 0-.5-.223-.5-.5s.223-.5.5-.5zm0-3h13c.277 0 .5.223.5.5s-.223.5-.5.5h-13c-.277 0-.5-.223-.5-.5s.223-.5.5-.5zm-3-5C.678 0 0 .678 0 1.5v27c0 .822.678 1.5 1.5 1.5h19c.822 0 1.5-.678 1.5-1.5v-8c0-.668-1-.648-1 0v8c0 .286-.214.5-.5.5h-19c-.286 0-.5-.214-.5-.5v-27c0-.286.214-.5.5-.5h19c.286 0 .5.214.5.5v7c0 .672 1 .648 1 0v-7c0-.822-.678-1.5-1.5-1.5z"/></svg>
+                    </div>
+                    <div class="advantages__title">Представитель завода</div>
+                    <p>Цены завода-производителя</p>
+                    <p>Наличие товара на складе</p>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <svg fill="#000000" width="800px" height="800px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 11c-.822 0-1.5.678-1.5 1.5v15c0 .822.678 1.5 1.5 1.5h7c.822 0 1.5-.678 1.5-1.5v-15c0-.822-.678-1.5-1.5-1.5zm0 1h7c.286 0 .5.214.5.5v15c0 .286-.214.5-.5.5h-7c-.286 0-.5-.214-.5-.5v-15c0-.286.214-.5.5-.5zm16-11c-.362 0-.72.04-1.06.19-.338.15-.642.417-.856.78C15.156 2.7 15 3.767 15 5.5c0 3.154-2.27 5.578-3.777 6.584-.53.34.02 1.2.554.832C13.27 11.922 16 9.146 16 5.5c0-1.665.197-2.6.445-3.02.125-.213.242-.307.4-.376.155-.07.37-.104.655-.104.477 0 .748.158 1.03.766.284.608.47 1.678.47 3.234 0 2.977-1.88 6.174-1.88 6.174-.278.324-.048.826.38.826h10c.58 0 .925.148 1.145.375.22.227.355.58.355 1.125 0 .996-.797 1.598-.797 1.598-.273.2-.27.61.006.808 0 0 .79.57.79 1.594 0 1.025-.79 1.594-.79 1.594-.303.218-.27.678.062.85 0 0 .728.343.728 1.306 0 .963-.728 1.307-.728 1.307-.354.183-.362.686-.014.88 0 0 .742.396.742 1.313 0 .46-.164.723-.43.928-.266.204-.662.322-1.07.322h-16c-.677 0-.642 1 0 1h16c.592 0 1.196-.158 1.68-.53.484-.37.82-.983.82-1.72 0-.874-.386-1.397-.746-1.746.362-.347.746-.87.746-1.754 0-.926-.413-1.445-.783-1.783.357-.38.783-.967.783-1.967 0-1.043-.458-1.637-.816-2.002.356-.367.816-.963.816-1.998 0-.717-.193-1.362-.637-1.82-.444-.458-1.1-.68-1.863-.68h-9.086C19.012 11.153 20 8.54 20 6c0-1.63-.17-2.81-.563-3.656C19.044 1.498 18.317 1 17.5 1z"/></svg>
+                    </div>
+                    <div class="advantages__title">Представитель завода</div>
+                    <p>Цены завода-производителя</p>
+                    <p>Наличие товара на складе</p>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <svg fill="#000000" width="800px" height="800px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 15c-.822 0-1.5.678-1.5 1.5v.785c-.393.114-.77.267-1.13.465l-.313-.314c-.582-.582-1.54-.582-2.12 0-.583.58-.583 1.54 0 2.12l.313.315c-.2.36-.354.736-.47 1.13h-.78c-.822 0-1.5.678-1.5 1.5s.678 1.5 1.5 1.5h.785c.114.393.267.77.465 1.13l-.314.313c-.582.582-.582 1.54 0 2.12.58.583 1.54.583 2.12 0l.315-.313c.36.2.736.354 1.13.47v.78c0 .822.678 1.5 1.5 1.5s1.5-.678 1.5-1.5v-.785c.393-.114.77-.267 1.13-.465l.313.314c.582.582 1.54.582 2.12 0 .583-.58.583-1.54 0-2.12l-.313-.315c.2-.36.354-.736.47-1.13h.78c.822 0 1.5-.678 1.5-1.5s-.678-1.5-1.5-1.5h-.785c-.114-.393-.267-.77-.465-1.13l.314-.313c.582-.582.582-1.54 0-2.12-.58-.583-1.54-.583-2.12 0l-.315.313c-.36-.2-.736-.354-1.13-.47v-.78c0-.822-.678-1.5-1.5-1.5zm0 1c.286 0 .5.214.5.5v1c0 .328.084.508.38.588.57.115 1.112.34 1.597.66.198.132.462.106.63-.062l.543-.543c.202-.202.505-.202.707 0 .202.202.202.505 0 .707l-.543.543c-.168.167-.195.43-.064.628.32.486.544 1.028.658 1.597.08.302.344.383.592.383h1c.286 0 .5.214.5.5 0 .286-.214.5-.5.5h-1c-.394 0-.528.158-.588.38-.115.57-.34 1.112-.66 1.597-.132.198-.106.462.062.63l.543.543c.202.202.202.505 0 .707-.202.202-.505.202-.707 0l-.543-.543c-.167-.168-.43-.195-.628-.064-.486.32-1.028.544-1.597.658-.264.07-.383.34-.383.592v1c0 .286-.214.5-.5.5-.286 0-.5-.214-.5-.5v-1c0-.37-.138-.523-.38-.588-.57-.115-1.112-.34-1.597-.66-.198-.132-.462-.106-.63.062l-.543.543c-.202.202-.505.202-.707 0-.202-.202-.202-.505 0-.707l.543-.543c.168-.167.195-.43.064-.628-.32-.486-.544-1.028-.658-1.597-.05-.252-.262-.383-.592-.383h-1c-.286 0-.5-.214-.5-.5 0-.286.214-.5.5-.5h1c.445 0 .524-.143.588-.38.115-.57.34-1.112.66-1.597.132-.198.106-.462-.062-.63l-.543-.543c-.202-.202-.202-.505 0-.707.202-.202.505-.202.707 0l.543.543c.167.168.43.195.628.064.486-.32 1.028-.544 1.597-.658.402-.092.383-.406.383-.592v-1c0-.286.214-.5.5-.5zm0 4c-1.375 0-2.5 1.125-2.5 2.5s1.125 2.5 2.5 2.5 2.5-1.125 2.5-2.5-1.125-2.5-2.5-2.5zm0 1c.834 0 1.5.666 1.5 1.5s-.666 1.5-1.5 1.5-1.5-.666-1.5-1.5.666-1.5 1.5-1.5zm-10-13C10.02 8 8 10.02 8 12.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5S14.98 8 12.5 8zm0 1c1.94 0 3.5 1.56 3.5 3.5S14.44 16 12.5 16 9 14.44 9 12.5 10.56 9 12.5 9zm-1-9c-.822 0-1.5.678-1.5 1.5v1.91c-.763.21-1.494.51-2.182.9L5.943 2.437c-.582-.582-1.54-.582-2.123 0L2.406 3.85c-.58.58-.58 1.54 0 2.12l1.887 1.887c-.382.677-.68 1.394-.887 2.143H1.5c-.822 0-1.5.678-1.5 1.5v2c0 .822.678 1.5 1.5 1.5h1.908c.207.757.507 1.48.893 2.164l-1.894 1.893c-.582.582-.582 1.54 0 2.123l1.414 1.414c.582.582 1.54.582 2.123 0l1.897-1.9c.68.39 1.404.69 2.16.898V23.5c0 .822.678 1.5 1.5 1.5h2c.664 0 .66-1 0-1h-2c-.286 0-.5-.214-.5-.5v-2.234c0-.234-.16-.437-.39-.49-.93-.212-1.82-.58-2.63-1.09-.196-.124-.452-.095-.617.068l-.006.01-.003.004-2.118 2.12c-.2.2-.507.2-.71 0l-1.413-1.415c-.2-.202-.2-.508 0-.71l2.123-2.12.004-.004.002-.003c.162-.165.19-.42.067-.616-.508-.81-.874-1.7-1.085-2.63-.052-.23-.255-.39-.49-.39H1.5c-.286 0-.5-.214-.5-.5v-2c0-.286.214-.5.5-.5h2.234c.234 0 .437-.16.49-.39.21-.923.574-1.806 1.077-2.61.125-.198.095-.454-.07-.62L3.113 5.265c-.202-.202-.202-.505 0-.707l1.414-1.414c.202-.202.508-.202.71 0L7.34 5.248c.165.165.42.194.62.07.814-.512 1.71-.88 2.647-1.093.228-.052.39-.255.39-.49V1.5c0-.286.214-.5.5-.5h2c.286 0 .5.214.5.5v2.234c0 .234.16.437.39.49.93.212 1.817.58 2.626 1.089.197.123.454.094.62-.07l2.1-2.1c.202-.202.505-.202.707 0l1.414 1.414c.202.202.202.505 0 .707L19.764 7.36c-.165.164-.194.42-.07.62.506.81.87 1.697 1.08 2.63.053.228.256.39.49.39H23.5c.286 0 .5.214.5.5v2c0 .668 1 .652 1 0v-2c0-.822-.678-1.5-1.5-1.5h-1.908c-.207-.756-.505-1.48-.89-2.164l1.862-1.865c.582-.58.582-1.54 0-2.12L21.15 2.436c-.58-.582-1.54-.582-2.12 0l-1.87 1.87c-.68-.39-1.405-.69-2.16-.898V1.5c0-.822-.678-1.5-1.5-1.5z"/></svg>
+                    </div>
+                    <div class="advantages__title">Представитель завода</div>
+                    <p>Цены завода-производителя</p>
+                    <p>Наличие товара на складе</p>
                 </div>
             </div>
         </div>
-    </section> -->
-    <section class="produts">
+    </section>
+    <section class="product_slider paddings">
         <div class="container">
-            <div class="produts__container">
+            <h2 class="titleSection center js-title way">Наша продукция</h2>
+            <div class="product_slider__container">
                 <div class="produt__item">
                     <div class="product__img">
-                        <img src="img/baseSmart/Base.42.png" alt="">
+                        <img src="../front/img/baseSmart/Base.42.png" alt="">
                     </div>
                     <div class="produt-left">
                         <h2 class="title">VAKIO Base Smart</h2>
                         <div class="price">188 000 ₸</div>
                         <p>Энергосберегающий проветриватель (рекуператор) воздуха. Устанавливается в любой комнате, доме или офисе с толщиной стены от 440 мм.
                             <br> Проветрит с закрытыми окнами и сбережет вашу энергию</p>
-                        <a href="" class="knowmore">подробнее 
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="knowmoresvg" d="M0 10C0 4.47715 4.47715 0 10 0H30V20C30 25.5228 25.5228 30 20 30H0V10Z" fill="rgba(0, 0, 0, 0.7)"></path>
-                                    <g clip-path="url(#clip0_77_463)">
-                                        <path d="M11 20.3492L15.9467 15L11 9.65083L12.5266 8L19 15L12.5266 22L11 20.3492Z" fill="white"></path>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_77_463">
-                                            <rect width="20" height="20" fill="white" transform="translate(5 5)"></rect>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </a>
                     </div>
                 </div>
-                <div class="produt__item left">
+                <div class="produt__item">
                     <div class="product__img">
-                        <img src="img/window Smart_.jpg" alt="">
+                        <img src="../front/img/window Smart_.jpg" alt="">
                     </div>
                     <div class="produt-left">
                         <h2 class="title">VAKIO Window Smart</h2>
                         <div class="price">188 000 ₸</div>
                         <p>Энергосберегающий проветриватель (рекуператор) воздуха. Устанавливается в любой комнате, доме или офисе с толщиной стены от 440 мм.
                             <br> Проветрит с закрытыми окнами и сбережет вашу энергию</p>
-                        <a href="" class="knowmore">подробнее 
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="knowmoresvg" d="M0 10C0 4.47715 4.47715 0 10 0H30V20C30 25.5228 25.5228 30 20 30H0V10Z" fill="rgba(0, 0, 0, 0.7)"></path>
-                                    <g clip-path="url(#clip0_77_463)">
-                                        <path d="M11 20.3492L15.9467 15L11 9.65083L12.5266 8L19 15L12.5266 22L11 20.3492Z" fill="white"></path>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_77_463">
-                                            <rect width="20" height="20" fill="white" transform="translate(5 5)"></rect>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </a>
                     </div>
                 </div>
                 <div class="produt__item">
                     <div class="product__img">
-                        <img src="img/interior_kiv.png" alt="">
+                        <img src="../front/img/interior_kiv.png" alt="">
                     </div>
                     <div class="produt-left">
                         <h2 class="title">KIV LONG </h2>
                         <div class="price">188 000 ₸</div>
                         <p>Энергосберегающий проветриватель (рекуператор) воздуха. Устанавливается в любой комнате, доме или офисе с толщиной стены от 440 мм.
                             <br> Проветрит с закрытыми окнами и сбережет вашу энергию</p>
-                        <a href="" class="knowmore">подробнее 
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="knowmoresvg" d="M0 10C0 4.47715 4.47715 0 10 0H30V20C30 25.5228 25.5228 30 20 30H0V10Z" fill="rgba(0, 0, 0, 0.7)"></path>
-                                    <g clip-path="url(#clip0_77_463)">
-                                        <path d="M11 20.3492L15.9467 15L11 9.65083L12.5266 8L19 15L12.5266 22L11 20.3492Z" fill="white"></path>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_77_463">
-                                            <rect width="20" height="20" fill="white" transform="translate(5 5)"></rect>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </a>
                     </div>
                 </div>
-                <div class="produt__item left">
+                <div class="produt__item">
                     <div class="product__img">
-                        <img src="img/KivPro_2.png" alt="">
+                        <img src="../front/img/KivPro_2.png" alt="">
                     </div>
                     <div class="produt-left">
                         <h2 class="title">Kivpro</h2>
                         <div class="price">188 000 ₸</div>
                         <p>Энергосберегающий проветриватель (рекуператор) воздуха. Устанавливается в любой комнате, доме или офисе с толщиной стены от 440 мм.
                             <br> Проветрит с закрытыми окнами и сбережет вашу энергию</p>
-                        <a href="" class="knowmore">подробнее 
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="knowmoresvg" d="M0 10C0 4.47715 4.47715 0 10 0H30V20C30 25.5228 25.5228 30 20 30H0V10Z" fill="rgba(0, 0, 0, 0.7)"></path>
-                                    <g clip-path="url(#clip0_77_463)">
-                                        <path d="M11 20.3492L15.9467 15L11 9.65083L12.5266 8L19 15L12.5266 22L11 20.3492Z" fill="white"></path>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_77_463">
-                                            <rect width="20" height="20" fill="white" transform="translate(5 5)"></rect>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="product__catalog bg paddings">
+        <div class="container">
+            <div class="titleSection__container js-title way">
+                <h2 class="titleSection center">Наша продукция</h2>
+                <a href="" class="showmore">смотреть все</a>
+            </div>
+
+            <div class="product__catalog__container">
+                <a href="" class="product__catalog-item way js-benefits ">
+                    <img src="../front/img/baseSmart/Base.36.png" alt="">
+                    <p>VAKIO Base Smart</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/Рекуп4.jpg" alt="">
+                    <p>VAKIO Window Smart</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/DSC06789.jpg" alt="">
+                    <p>KIV LONG</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/KivPro_2.png" alt="">
+                    <p>Kivpro</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/KivPro_2.png" alt="">
+                    <p>Kivpro</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/Рецик большой_1.png" alt="">
+                    <p>VAKIO Window Smart</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/reflash-power.png" alt="">
+                    <p>Kivpro</p>
+                </a>
+
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/Рекуп4.jpg" alt="">
+                    <p>VAKIO Window Smart</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/DSC06789.jpg" alt="">
+                    <p>KIV LONG</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/KivPro_2.png" alt="">
+                    <p>Kivpro</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/Рецик большой_1.png" alt="">
+                    <p>VAKIO Window Smart</p>
+                </a>
+                <a href="" class="product__catalog-item way js-benefits">
+                    <img src="../front/img/reflash-power.png" alt="">
+                    <p>Kivpro</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <div class="popup ">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14 1.415L12.585 0L7 5.585L1.415 0L0 1.415L5.585 7L0 12.585L1.415 14L7 8.415L12.585 14L14 12.585L8.415 7L14 1.415Z" fill="black"></path>
         </svg>
         <div class="popup__title">Оставить заявку</div>
-        <form action="">
+        <form action="/" method="POST">
+            <div class="form__group">
+                <label for="">Выберите город</label>
+                <select class="form-control">
+                    <option value="Астана">Астана</option>
+                    <option value="Алматы">Алматы</option>
+                    <option value="Караганда">Караганда</option>
+                    <option value="другое">другое</option>
+                </select>
+            </div>
             <div class="form__group">
                 <label for="">Ваше имя</label>
                 <input type="text" required="">
             </div>
             <div class="form__group">
                 <label for="">Ваш номер телефона</label>
-                <input type="tel" id="mask__phone" required="">
+                <input type="tel" id="phone-mask" required="">
             </div>
             <button type="submit">Оставить заявку</button>
         </form>
@@ -316,9 +355,58 @@
         </div>
     </div>
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/main.js"></script>
+    <div class="form_loader" id="form_loader">
+        <div class="form_loader_block">
+            <div class="form_loader_animate"></div>
+            <div class="form_loader_text">Пожалуйста, подождите</div>
+        </div>
+    </div>
+    <div class="alert--fixed box-size">
+        <div class="alert--content alert--width alert--block box-size">
+            <div class="alert__title">Ваша заявка принята </div>
+
+            <div class="alert--img">
+                <div class="alert--img__item active box-size">
+                    <svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50.8119 67.1933L40.1315 56.5129L36.5073 60.1371L50.8119 74.4417L81.547 43.7066L77.9228 40.0825L50.8119 67.1933Z" fill="#222641"></path>
+                        <path d="M116 58C116 90.0325 90.0325 116 58 116C25.9675 116 0 90.0325 0 58C0 25.9675 25.9675 0 58 0C90.0325 0 116 25.9675 116 58ZM5.1747 58C5.1747 87.1746 28.8254 110.825 58 110.825C87.1746 110.825 110.825 87.1746 110.825 58C110.825 28.8254 87.1746 5.1747 58 5.1747C28.8254 5.1747 5.1747 28.8254 5.1747 58Z" fill="#2E61AF"></path>
+                    </svg>
+                </div>
+                <div class="alert--img__item warning box-size">
+                    <svg height="512pt" viewBox="0 -18 512.00043 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path d="m241 116h30v165h-30zm0 0"></path>
+                        <path d="m256 371c-8.277344 0-15 6.722656-15 15s6.722656 15 15 15 15-6.722656 15-15-6.722656-15-15-15zm0 0"></path>
+                        <path d="m502.53125 364.714844-180.890625-326.011719c-13.40625-24.230469-37.941406-38.703125-65.640625-38.703125s-52.234375 14.472656-65.640625 38.714844l-180.890625 325.988281c-12.976562 23.480469-12.597656 51.28125 1.027344 74.398437 13.621094 23.101563 37.777344 36.898438 64.597656 36.898438h361.8125c26.820312 0 50.976562-13.796875 64.597656-36.898438 13.625-23.117187 14.003906-50.917968 1.027344-74.386718zm-246.53125 66.285156c-24.8125 0-45-20.1875-45-45s20.1875-45 45-45 45 20.1875 45 45-20.1875 45-45 45zm45-120h-90v-225h90zm0 0"></path>
+                    </svg>
+                </div>
+                <div class="alert--img__item error box-size">
+                    <svg class="box-size" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.111 455.111" xml:space="preserve">
+                        <circle style="fill:#E24C4B;" cx="227.556" cy="227.556" r="227.556"></circle>
+                        <path style="fill:#D1403F;" d="M455.111,227.556c0,125.156-102.4,227.556-227.556,227.556c-72.533,0-136.533-32.711-177.778-85.333
+                        c38.4,31.289,88.178,49.778,142.222,49.778c125.156,0,227.556-102.4,227.556-227.556c0-54.044-18.489-103.822-49.778-142.222
+                        C422.4,91.022,455.111,155.022,455.111,227.556z"></path>
+                        <path style="fill:#FFFFFF;" d="M331.378,331.378c-8.533,8.533-22.756,8.533-31.289,0l-72.533-72.533l-72.533,72.533
+                        c-8.533,8.533-22.756,8.533-31.289,0c-8.533-8.533-8.533-22.756,0-31.289l72.533-72.533l-72.533-72.533
+                        c-8.533-8.533-8.533-22.756,0-31.289c8.533-8.533,22.756-8.533,31.289,0l72.533,72.533l72.533-72.533
+                        c8.533-8.533,22.756-8.533,31.289,0c8.533,8.533,8.533,22.756,0,31.289l-72.533,72.533l72.533,72.533
+                        C339.911,308.622,339.911,322.844,331.378,331.378z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="alert-text box-size">
+                <div class="alert--title box-size">
+                </div>
+                <div class="alert--subtitle box-size">В скором времени наш менеджер свяжется с вами</div>
+                <button>ОК</button>
+            </div>
+        </div>
+        <div class="alert--bg alert--close box-size"></div>
+
+    </div>
+    <script src="../front/js/jquery-3.6.0.min.js"></script>
+    <script src="../front/js/jquery.waypoints.min.js"></script>
+    <script src="../front/js/slick.min.js"></script>
+    <script src="../front/js/imask.js"></script>
+    <script src="../front/js/main.js"></script>
 </body>
 
 </html>
