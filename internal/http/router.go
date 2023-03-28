@@ -6,11 +6,19 @@ import (
 	mngSrv "github.com/btussupb/vakio/internal/manager"
 )
 
-func NewHandler() *handler {
-	return &handler{
-		mngSrv: mngSrv.Service,
-	}
+type service struct {
+	mngSrv mngSrv.Service
 }
+
+func NewMngService(mngSrv mngSrv.Service) *service {
+	return &service{mngSrv: mngSrv}
+}
+
+// func NewHandler(mngSrv mngSrv.Service) *handler {
+// 	return &handler{
+// 		mngSrv: mngSrv,
+// 	}
+// }
 
 func (h *handler) Router() http.Handler {
 	mux := http.NewServeMux()

@@ -12,11 +12,11 @@ type handler struct {
 	mngSrv mngSrv.Service
 }
 
-// func NewHandler(mngSrv mngSrv.Service) *handler {
-// 	return &handler{
-// 		mngSrv: mngSrv,
-// 	}
-// }
+func NewHandler(mngSrv mngSrv.Service) *handler {
+	return &handler{
+		mngSrv: mngSrv,
+	}
+}
 
 var temp *template.Template
 
