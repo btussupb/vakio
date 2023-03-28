@@ -1,8 +1,6 @@
 package manager
 
 import (
-	"fmt"
-
 	wayToDb "github.com/btussupb/vakio/internal/storage"
 )
 
@@ -15,6 +13,5 @@ func NewUserService(wayToDb wayToDb.Storage) *service {
 }
 
 func (s *service) PostUser(userInput User) error {
-	fmt.Println("manager")
 	return s.wayToDb.PostUser(userInput.toStorageModel())
 }

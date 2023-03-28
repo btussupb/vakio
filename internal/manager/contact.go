@@ -2,9 +2,9 @@ package manager
 
 type (
 	User struct {
+		City   string `json:"sity"`
 		Name   string `json:"name"`
 		Number string `json:"number"`
-		City   string `json:"sity"`
 	}
 
 	Service interface {

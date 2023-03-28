@@ -1,0 +1,14 @@
+{
+    "app": {
+        "server_address": "http://localhost:8181"
+    },
+    "http": {
+        "port": ":8181",
+        "idle_timeout": 30,
+        "write_timeout": 30,
+        "read_timeout": 30
+    },
+    "database": {
+        "db_name": "vakio.db"
+    }
+}

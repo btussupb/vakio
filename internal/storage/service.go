@@ -17,44 +17,48 @@ func NewStorage(db *sql.DB) *storage {
 }
 
 func (s *storage) PostUser(userInput User) error {
-	fmt.Println(userInput.Name, userInput.Number, time.Now())
+	fmt.Println(userInput.City, userInput.Name, userInput.Number, time.Now())
 
 	s.init()
 
-	if _, err := s.db.Exec("INSERT INTO users (Name, Number, CreatedTime) VALUES ($1, $2, $3)", userInput.Name, userInput.Number, time.Now()); err != nil {
-		fmt.Println("Exec")
+	if _, err := s.db.Exec("INSERT INTO users (city, name, number, createdTime) VALUES ($1, $2, $3, $4)", userInput.City, userInput.Name, userInput.Number, time.Now()); err != nil {
+		fmt.Println("Exec", err)
 	}
 
 	user, err := s.getUser()
 	if err != nil {
-		fmt.Println("getUser")
+		fmt.Println("getUser", err)
 	}
-	fmt.Println(user)
+	fmt.Println(user, "end code")
 
 	return nil
 }
 
 func (s *storage) getUser() (*User, error) {
-	row, err := s.db.Query("SELECT * FROM таблица ORDER BY id DESC LIMIT 1")
+	row, err := s.db.Query("SELECT * FROM users ORDER BY id DESC LIMIT 1")
 	if err != nil {
-		fmt.Println("Query")
+		fmt.Println("Query", err)
+		return nil, err
 	}
 	defer row.Close()
 
 	user := &User{}
-
-	if err := row.Scan(&user.Name, &user.Number, &user.CreatedTime); err != nil {
-		fmt.Println("Scan")
+	for row.Next() {
+		if err := row.Scan(&user.Id, &user.City, &user.Name, &user.Number, &user.CreatedTime); err != nil {
+			fmt.Println("Scan", err)
+			return nil, err
+		}
 	}
 	return user, nil
 }
 
 func (s *storage) init() error {
-	q := ("CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, number TEXT, Time time.Time)")
+	q := ("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, city TEXT, name TEXT, number TEXT, createdTime DATE)")
 
 	_, err := s.db.Exec(q)
 	if err != nil {
-		fmt.Println("init bd")
+		fmt.Println("init bd", err)
 	}
+
 	return nil
 }

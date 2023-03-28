@@ -53,10 +53,8 @@ func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
 	// if err := json.NewDecoder(r.Body).Decode(&userInput); err != nil {
 	// 	fmt.Println("Decode r.Body:", err)
 	// }
-	fmt.Println(userInput)
 	// defer r.Body.Close()
 
-	fmt.Println(h)
 	if err := h.mngSrv.PostUser(userInput); err != nil {
 		// w.Write([]byte("ошибка на сервере"))
 	} else {
