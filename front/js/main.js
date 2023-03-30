@@ -22,6 +22,19 @@ if (popup) {
         mask: '+{7}(000)000-00-00'
     };
     var mask = IMask(element, maskOptions);
+    // Get the form and phone number input element
+    const form = document.querySelector('form');
+    const phoneInput = document.querySelector('#phone-mask');
+
+    // Listen for form submission event
+    form.addEventListener('submit', (event) => {
+        // Check if the phone number is fully entered
+        if (phoneInput.value.length < 16) { // 18 is the length of the mask
+            // If not, prevent form submission and display an error message
+            event.preventDefault();
+            alert('Please enter a valid phone number');
+        }
+    });
 }
 
 
@@ -88,3 +101,7 @@ $(".way").waypoint({
     },
     offset: "85%",
 })
+
+function submitForm() {
+    $('#form_loader').show();
+}

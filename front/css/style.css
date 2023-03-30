@@ -351,10 +351,6 @@
     margin-bottom: 30px;
 }
 
-.form__group select {
-    margin-bottom: 30px;
-}
-
 .form__group label {
     color: #666968;
     margin-bottom: 5px;
@@ -364,9 +360,9 @@
 .form__group select {
     width: 100%;
     height: 60px;
-    background: #F3F3F3;
+    background: none;
+    border: 1px solid #3688FF;
     border-radius: 5px;
-    border: none;
     padding: 10px;
     outline: #3688FF;
 }
@@ -1217,4 +1213,99 @@
 .advantages__item p {
     margin-bottom: 10px;
     text-justify: newspaper;
+}
+
+
+/*  */
+
+.services__imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 250px;
+    width: 80%;
+    margin-right: 50px;
+}
+
+.services__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services__img:nth-child(1) {
+    grid-column: span 2 / auto;
+}
+
+.services__img:nth-child(3) {
+    grid-row: span 2 / auto;
+}
+
+.services__img:nth-child(5) {
+    grid-column: span 2 / auto;
+}
+
+.services__img {
+    cursor: zoom-in;
+}
+
+.services__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services__content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.services__item {
+    display: flex;
+}
+
+.services__title {
+    font-size: 24px;
+    color: #3688FF;
+    margin-right: 20px;
+}
+
+.services__item p {
+    font-size: 18px;
+}
+
+.subTitle {
+    text-align: center;
+    color: #222641;
+    margin-bottom: 30px;
+}
+
+.doc__conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doc__img,
+.doc__text {
+    width: 48%;
+}
+
+.doc__text p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.doc__img {
+    height: 600px;
+    cursor: zoom-in;
+    border: 5px solid #585959;
+    background: #fff;
+}
+
+.doc__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

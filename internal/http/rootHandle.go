@@ -60,4 +60,5 @@ func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
 	} else {
 		// w.Write([]byte("мы вам напишем"))
 	}
+	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
