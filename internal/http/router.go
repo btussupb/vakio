@@ -27,6 +27,8 @@ func (h *handler) Router() http.Handler {
 
 	mux.HandleFunc("/", h.RootHandle)
 	mux.HandleFunc("/products", h.ProductsHandle)
+	mux.HandleFunc("/admin", h.Admin)
+	mux.HandleFunc("/admin/home", h.AdminHome)
 	mux.Handle("/front/css/", http.StripPrefix("/front/css/", http.FileServer(http.Dir("./front/css"))))
 	return mux
 }

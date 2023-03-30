@@ -15,3 +15,25 @@ func (h *handler) ProductsHandle(w http.ResponseWriter, r *http.Request) {
 		//
 	}
 }
+
+func (h *handler) Admin(w http.ResponseWriter, r *http.Request) {
+	temp, err := template.ParseFiles("front/adminLogin.html")
+	if err != nil {
+		//
+	}
+	err = temp.ExecuteTemplate(w, "adminLogin", nil)
+	if err != nil {
+		//
+	}
+}
+
+func (h *handler) AdminHome(w http.ResponseWriter, r *http.Request) {
+	temp, err := template.ParseFiles("front/admin.html")
+	if err != nil {
+		//
+	}
+	err = temp.ExecuteTemplate(w, "admin", nil)
+	if err != nil {
+		//
+	}
+}
