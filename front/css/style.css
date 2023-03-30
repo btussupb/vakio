@@ -1321,3 +1321,7 @@
     height: 100%;
     object-fit: contain;
 }
+
+#preview {
+margin-bottom: 30px;
+}

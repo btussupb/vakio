@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../front/css/main.css">
 </head>
 <body>
-    <div class="popup active">
+    <div class="popup active fileupload way">
         <div class="popup__title">Загрузить Отзывы</div>
         <form action="/admin/home" method="POST">
             <div class="form__group">
@@ -19,11 +19,18 @@
             </div>
             <div class="form__group">
                 <label for="">Видео/Фото</label>
-                <input type="file" id="file" name="file" accept="video/*, image/*" required>
+                <input type="file" id="myFileInput" name="file" accept="video/*, image/*" required>
             </div>
+            <input hidden type="tel" placeholder="+7(   )    -  -  " id="phone-mask" required="" name="number">
+
+            <div id="preview"></div>
             <button type="submit">войти</button>
         </form>
+        <svg hidden width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.415L12.585 0L7 5.585L1.415 0L0 1.415L5.585 7L0 12.585L1.415 14L7 8.415L12.585 14L14 12.585L8.415 7L14 1.415Z" fill="black"></path>
+        </svg>
     </div>
+    
 
     <div class="form_loader" id="form_loader">
         <div class="form_loader_block">
@@ -72,7 +79,12 @@
         <div class="alert--bg alert--close box-size"></div>
 
     </div>
+    <a href="#/" class="popupOpen bannerbtn" hidden> </a>
+    <div class="overlay " hidden></div>
+
     <script src="../front/js/jquery-3.6.0.min.js"></script>
+    <script src="../front/js/jquery.waypoints.min.js"></script>
+    <script src="../front/js/imask.js"></script>
     <script src="../front/js/main.js"></script>
 </body>
 </html>

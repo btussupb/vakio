@@ -38,49 +38,17 @@ if (popup) {
 }
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     function tabsMain() {
-//         let descParentTabs = document.querySelector('.tab-head')
-//         let btn = document.querySelectorAll('.tablink');
-//         let block = document.querySelectorAll('.tabcontent');
-//         btn.forEach((key, index) => {
-//             key.addEventListener('click', function() {
-//                 block.forEach((item, itemindex) => {
-//                     item.classList.toggle('active', index === itemindex)
-//                     item.animate([
-//                         { opacity: '0' },
-//                         { opacity: '1' }
-//                     ], { duration: 200, easing: 'ease-in' })
-//                 });
-//             });
-//         });
-
-//         descParentTabs.addEventListener('click', (e) => {
-//             const target = e.target
-//             if (target.classList.contains('tablink')) {
-//                 btn.forEach(item => {
-//                     item.classList.remove('active')
-//                 })
-//             }
-//             target.classList.add('active')
-//         });
-//     }
-//     tabsMain();
-// })
-
-// // tabs
-
-$('.product_slider__container').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    // prevArrow: '<button type="button" class="slick_arrow slick-prev"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8779 10.1857L1.87205 10.1857M1.87205 10.1857L10.875 1.18271M1.87205 10.1857L10.875 19.1886" stroke="#fff" stroke-width="2.12202"/> </svg></button>',
-    // nextArrow: '<button type="button" class="slick_arrow slick-next"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8779 10.1857L1.87205 10.1857M1.87205 10.1857L10.875 1.18271M1.87205 10.1857L10.875 19.1886" stroke="#fff" stroke-width="2.12202"/> </svg></button>',
-    // appendArrows: '.slider__arrow',
-});
+// $('.product_slider__container').slick({
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     fade: true,
+//     arrows: false,
+//     autoplay: true,
+//     autoplaySpeed: 1000,
+//     // prevArrow: '<button type="button" class="slick_arrow slick-prev"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8779 10.1857L1.87205 10.1857M1.87205 10.1857L10.875 1.18271M1.87205 10.1857L10.875 19.1886" stroke="#fff" stroke-width="2.12202"/> </svg></button>',
+//     // nextArrow: '<button type="button" class="slick_arrow slick-next"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.8779 10.1857L1.87205 10.1857M1.87205 10.1857L10.875 1.18271M1.87205 10.1857L10.875 19.1886" stroke="#fff" stroke-width="2.12202"/> </svg></button>',
+//     // appendArrows: '.slider__arrow',
+// });
 
 
 // // alert 
@@ -104,4 +72,27 @@ $(".way").waypoint({
 
 function submitForm() {
     $('#form_loader').show();
+}
+
+
+const fileupload = document.querySelector(".fileupload")
+const fileInput = document.getElementById('myFileInput');
+const preview = document.getElementById('preview');
+
+if (fileupload) {
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+    
+      reader.addEventListener('load', () => {
+        const fileType = file.type.split('/')[0];
+        if (fileType === 'image') {
+          preview.innerHTML = `<img src="${reader.result}" alt="preview">`;
+        } else if (fileType === 'video') {
+          preview.innerHTML = `<video src="${reader.result}" controls></video>`;
+        }
+      });
+    
+      reader.readAsDataURL(file);
+    });
 }
