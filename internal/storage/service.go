@@ -2,7 +2,10 @@ package db
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
+	"log"
+	"net/smtp"
 	"time"
 
 	_ "github.com/mattn/go-sqlite3"
@@ -31,6 +34,8 @@ func (s *storage) PostUser(userInput User) error {
 	}
 	fmt.Println(user, "end code")
 
+	s.sendMail(user)
+
 	return nil
 }
 
@@ -50,6 +55,27 @@ func (s *storage) getUser() (*User, error) {
 		}
 	}
 	return user, nil
+}
+
+func (s *storage) sendMail(data *User) error {
+	auth := smtp.PlainAuth("", "karagandavakio@gmail.com", "ajnbbhiqrjfctfuv", "smtp.gmail.com")
+
+	to := []string{"Neveryun1212@gmail.com"}
+
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	body := string(jsonData)
+
+	msg := []byte(body)
+
+	err = smtp.SendMail("smtp.gmail.com:587", auth, "bjjbaha@mail.ru", to, msg)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return nil
 }
 
 func (s *storage) init() error {
