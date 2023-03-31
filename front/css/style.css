@@ -19,7 +19,7 @@
     height: 100%;
     object-fit: contain;
 }
-
+ 
 .header {
     position: fixed;
     top: 0;
@@ -1324,4 +1324,7 @@
 
 #preview {
 margin-bottom: 30px;
+}
+.fileupload svg {
+    display: none;
 }
