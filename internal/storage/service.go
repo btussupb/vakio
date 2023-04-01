@@ -62,14 +62,10 @@ func (s *storage) sendMail(data *User) error {
 
 	to := []string{"Neveryun1212@gmail.com"}
 
-	jsonData, err := json.Marshal(data)
+	msg, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	body := string(jsonData)
-
-	msg := []byte(body)
 
 	err = smtp.SendMail("smtp.gmail.com:587", auth, "bjjbaha@mail.ru", to, msg)
 	if err != nil {
