@@ -96,3 +96,4 @@ if (fileupload) {
       reader.readAsDataURL(file);
     });
 }
+
