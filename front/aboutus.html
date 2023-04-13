@@ -1,0 +1,94 @@
+{{define "admin"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../front/css/style.css">
+    <link rel="stylesheet" href="../front/css/main.css">
+</head>
+
+<body>
+    <div class="popup active fileupload way">
+        <div class="popup__title">Загрузить Отзывы</div>
+        <form action="/admin/home" method="POST">
+            <div class="form__group">
+                <label for="">Текст</label>
+                <input type="text" required="" name="">
+            </div>
+            <div class="form__group">
+                <label for="">Видео/Фото</label>
+                <input type="file" id="myFileInput" name="file" accept="video/*, image/*" required>
+            </div>
+            <input hidden type="tel" placeholder="+7(   )    -  -  " id="phone-mask" required="" name="number">
+
+            <div id="preview"></div>
+            <button type="submit">войти</button>
+        </form>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1.415L12.585 0L7 5.585L1.415 0L0 1.415L5.585 7L0 12.585L1.415 14L7 8.415L12.585 14L14 12.585L8.415 7L14 1.415Z" fill="black"></path>
+        </svg>
+    </div>
+
+
+    <div class="form_loader" id="form_loader">
+        <div class="form_loader_block">
+            <div class="form_loader_animate"></div>
+            <div class="form_loader_text">Пожалуйста, подождите</div>
+        </div>
+    </div>
+    <div class="alert--fixed box-size">
+        <div class="alert--content alert--width alert--block box-size">
+            <div class="alert__title">Ваша заявка принята </div>
+
+            <div class="alert--img">
+                <div class="alert--img__item active box-size">
+                    <svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50.8119 67.1933L40.1315 56.5129L36.5073 60.1371L50.8119 74.4417L81.547 43.7066L77.9228 40.0825L50.8119 67.1933Z" fill="#222641"></path>
+                        <path d="M116 58C116 90.0325 90.0325 116 58 116C25.9675 116 0 90.0325 0 58C0 25.9675 25.9675 0 58 0C90.0325 0 116 25.9675 116 58ZM5.1747 58C5.1747 87.1746 28.8254 110.825 58 110.825C87.1746 110.825 110.825 87.1746 110.825 58C110.825 28.8254 87.1746 5.1747 58 5.1747C28.8254 5.1747 5.1747 28.8254 5.1747 58Z" fill="#2E61AF"></path>
+                    </svg>
+                </div>
+                <div class="alert--img__item warning box-size">
+                    <svg height="512pt" viewBox="0 -18 512.00043 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path d="m241 116h30v165h-30zm0 0"></path>
+                        <path d="m256 371c-8.277344 0-15 6.722656-15 15s6.722656 15 15 15 15-6.722656 15-15-6.722656-15-15-15zm0 0"></path>
+                        <path d="m502.53125 364.714844-180.890625-326.011719c-13.40625-24.230469-37.941406-38.703125-65.640625-38.703125s-52.234375 14.472656-65.640625 38.714844l-180.890625 325.988281c-12.976562 23.480469-12.597656 51.28125 1.027344 74.398437 13.621094 23.101563 37.777344 36.898438 64.597656 36.898438h361.8125c26.820312 0 50.976562-13.796875 64.597656-36.898438 13.625-23.117187 14.003906-50.917968 1.027344-74.386718zm-246.53125 66.285156c-24.8125 0-45-20.1875-45-45s20.1875-45 45-45 45 20.1875 45 45-20.1875 45-45 45zm45-120h-90v-225h90zm0 0"></path>
+                    </svg>
+                </div>
+                <div class="alert--img__item error box-size">
+                    <svg class="box-size" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.111 455.111" xml:space="preserve">
+                        <circle style="fill:#E24C4B;" cx="227.556" cy="227.556" r="227.556"></circle>
+                        <path style="fill:#D1403F;" d="M455.111,227.556c0,125.156-102.4,227.556-227.556,227.556c-72.533,0-136.533-32.711-177.778-85.333
+                        c38.4,31.289,88.178,49.778,142.222,49.778c125.156,0,227.556-102.4,227.556-227.556c0-54.044-18.489-103.822-49.778-142.222
+                        C422.4,91.022,455.111,155.022,455.111,227.556z"></path>
+                        <path style="fill:#FFFFFF;" d="M331.378,331.378c-8.533,8.533-22.756,8.533-31.289,0l-72.533-72.533l-72.533,72.533
+                        c-8.533,8.533-22.756,8.533-31.289,0c-8.533-8.533-8.533-22.756,0-31.289l72.533-72.533l-72.533-72.533
+                        c-8.533-8.533-8.533-22.756,0-31.289c8.533-8.533,22.756-8.533,31.289,0l72.533,72.533l72.533-72.533
+                        c8.533-8.533,22.756-8.533,31.289,0c8.533,8.533,8.533,22.756,0,31.289l-72.533,72.533l72.533,72.533
+                        C339.911,308.622,339.911,322.844,331.378,331.378z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="alert-text box-size">
+                <div class="alert--title box-size">
+                </div>
+                <div class="alert--subtitle box-size">В скором времени наш менеджер свяжется с вами</div>
+                <button>ОК</button>
+            </div>
+        </div>
+        <div class="alert--bg alert--close box-size"></div>
+
+    </div>
+    <a href="#/" class="popupOpen bannerbtn" hidden> </a>
+    <div class="overlay " hidden></div>
+
+    <script src="../front/js/jquery-3.6.0.min.js"></script>
+    <script src="../front/js/jquery.waypoints.min.js"></script>
+    <script src="../front/js/imask.js"></script>
+    <script src="../front/js/main.js"></script>
+</body>
+
+</html>
+{{end}}

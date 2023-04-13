@@ -22,6 +22,12 @@ if (popup) {
         mask: '+{7}(000)000-00-00'
     };
     var mask = IMask(element, maskOptions);
+
+    var element2 = document.getElementById('phone-mask2');
+    var maskOptions2 = {
+        mask: '+{7}(000)000-00-00'
+    };
+    var mask2 = IMask(element2, maskOptions2);
     // Get the form and phone number input element
     const form = document.querySelector('form');
     const phoneInput = document.querySelector('#phone-mask');
@@ -81,19 +87,26 @@ const preview = document.getElementById('preview');
 
 if (fileupload) {
     fileInput.addEventListener('change', () => {
-      const file = fileInput.files[0];
-      const reader = new FileReader();
-    
-      reader.addEventListener('load', () => {
-        const fileType = file.type.split('/')[0];
-        if (fileType === 'image') {
-          preview.innerHTML = `<img src="${reader.result}" alt="preview">`;
-        } else if (fileType === 'video') {
-          preview.innerHTML = `<video src="${reader.result}" controls></video>`;
-        }
-      });
-    
-      reader.readAsDataURL(file);
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            const fileType = file.type.split('/')[0];
+            if (fileType === 'image') {
+                preview.innerHTML = `<img src="${reader.result}" alt="preview">`;
+            } else if (fileType === 'video') {
+                preview.innerHTML = `<video src="${reader.result}" controls></video>`;
+            }
+        });
+
+        reader.readAsDataURL(file);
     });
 }
 
+const hamburger = document.querySelector(".bar");
+const headerNavLinks = document.querySelector(".header__container");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    headerNavLinks.classList.toggle("active");
+})
