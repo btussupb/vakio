@@ -1,7 +1,7 @@
 package http
 
 import (
-	"fmt"
+	"encoding/json"
 	"html/template"
 	"net/http"
 
@@ -26,11 +26,13 @@ func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
 
 		temp, err := template.ParseFiles("front/index.html")
 		if err != nil {
-			fmt.Println("ParseFiles")
+			jsonerr = JSONError{Succes: "false", Error: err.Error()}
+			json.NewEncoder(w).Encode(jsonerr)
 		}
 		err = temp.ExecuteTemplate(w, "index", nil)
 		if err != nil {
-			fmt.Println("ExecuteTemplate from method Get")
+			jsonerr = JSONError{Succes: "false", Error: err.Error()}
+			json.NewEncoder(w).Encode(jsonerr)
 		}
 	case http.MethodPost:
 		h.methodPost(w, r)
@@ -40,23 +42,17 @@ func (h *handler) RootHandle(w http.ResponseWriter, r *http.Request) {
 func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
 	var userInput mngSrv.User
 	if err := r.ParseForm(); err != nil {
-		fmt.Fprintf(w, "ParseForm() err: %v", err)
-		return
+		jsonerr = JSONError{Succes: "false", Error: err.Error()}
+		json.NewEncoder(w).Encode(jsonerr)
 	}
-	// fmt.Fprintf(w, "Post from website! r.PostFrom = %v\n", r.PostForm)
+
 	userInput.Name = r.FormValue("name")
 	userInput.Number = r.FormValue("number")
 	userInput.City = r.FormValue(("sity"))
 
-	// fmt.Println(r.PostForm)
-
-	// if err := json.NewDecoder(r.Body).Decode(&userInput); err != nil {
-	// 	fmt.Println("Decode r.Body:", err)
-	// }
-	// defer r.Body.Close()
-
 	if err := h.mngSrv.PostUser(userInput); err != nil {
-		// w.Write([]byte("ошибка на сервере"))
+		jsonerr = JSONError{Succes: "false", Error: err.Error()}
+		json.NewEncoder(w).Encode(jsonerr)
 	} else {
 		// w.Write([]byte("мы вам напишем"))
 	}

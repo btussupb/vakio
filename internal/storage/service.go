@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/smtp"
 	"time"
 
@@ -25,12 +24,12 @@ func (s *storage) PostUser(userInput User) error {
 	s.init()
 
 	if _, err := s.db.Exec("INSERT INTO users (city, name, number, createdTime) VALUES ($1, $2, $3, $4)", userInput.City, userInput.Name, userInput.Number, time.Now()); err != nil {
-		fmt.Println("Exec", err)
+		return err
 	}
 
 	user, err := s.getUser()
 	if err != nil {
-		fmt.Println("getUser", err)
+		return err
 	}
 	fmt.Println(user, "end code")
 
@@ -64,12 +63,12 @@ func (s *storage) sendMail(data *User) error {
 
 	msg, err := json.Marshal(data)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	err = smtp.SendMail("smtp.gmail.com:587", auth, "bjjbaha@mail.ru", to, msg)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	return nil
 }
@@ -79,7 +78,7 @@ func (s *storage) init() error {
 
 	_, err := s.db.Exec(q)
 	if err != nil {
-		fmt.Println("init bd", err)
+		return err
 	}
 
 	return nil
