@@ -150,6 +150,10 @@ select {
 }
 
 @media (max-width: 1160px) {
+    .logo{
+        width: 120px;
+        height: 60px;
+    }
     .feedback__slider .slick-prev {
         left: 10%;
     }
@@ -199,10 +203,10 @@ select {
     .header__contacts {
         display: flex;
     }
-    .logo {
+    /* .logo {
         width: fit-content;
         height: fit-content;
-    }
+    } */
     .header__mob-container {
         display: flex;
         align-items: center;
@@ -231,7 +235,7 @@ select {
         height: fit-content;
     }
     .header .logo {
-        display: block;
+        display: inline-block;
     }
     .bar.active .line:nth-child(2n) {
         width: 50%;
