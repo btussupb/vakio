@@ -51,10 +51,13 @@ func (h *handler) methodPost(w http.ResponseWriter, r *http.Request) {
 	userInput.City = r.FormValue(("sity"))
 
 	if err := h.mngSrv.PostUser(userInput); err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
 		jsonerr = JSONError{Succes: "false", Error: err.Error()}
 		json.NewEncoder(w).Encode(jsonerr)
 	} else {
-		// w.Write([]byte("мы вам напишем"))
+		w.WriteHeader(http.StatusOK)
+		jsonerr = JSONError{Succes: "true"}
+		json.NewEncoder(w).Encode(jsonerr)
 	}
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
