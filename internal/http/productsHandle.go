@@ -25,7 +25,7 @@ func (h *handler) ProductsHandle(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(jsonerr)
 	}
 
-	w.WriteHeader(http.StatusOK)
+	//	w.WriteHeader(http.StatusOK)
 	jsonerr = JSONError{Succes: "true"}
 	json.NewEncoder(w).Encode(jsonerr)
 }
